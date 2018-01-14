@@ -13,7 +13,7 @@ export default {
           label: "Status",
           name: "status",
           type: "select",
-          options: ['Draft', 'Done', 'Archived']
+          options: ["Draft", "Done", "Archived"]
         }
       ]
     },
@@ -39,4 +39,4 @@ export default {
       ]
     }
   ]
-}
+};

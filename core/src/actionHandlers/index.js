@@ -1,6 +1,6 @@
-import { docTypes } from '../data';
+import { docTypes } from "../data";
 
-const R = require('ramda');
+const R = require("ramda");
 
 export default () => {
   const actionHandlers = {};
@@ -11,17 +11,16 @@ export default () => {
         return {
           ...action.doc,
           createdAt: Date.now()
-        }
+        };
       },
       [`UPDATE_${docType}`]: (doc, action) => {
-        const updatedDoc = R.merge(doc, R.omit(['_rev'], action.doc));
+        const updatedDoc = R.merge(doc, R.omit(["_rev"], action.doc));
         return R.merge(updatedDoc, {
           updatedAt: Date.now()
-        })
+        });
       }
-    }
-  })
+    };
+  });
 
   return actionHandlers;
-}
-
+};

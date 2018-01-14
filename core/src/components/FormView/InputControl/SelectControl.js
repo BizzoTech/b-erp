@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
-import Select from 'material-ui/Select';
-import { MenuItem } from 'material-ui/Menu';
-import Input, { InputLabel } from 'material-ui/Input';
-import { FormControl, FormHelperText } from 'material-ui/Form';
-
+import React, { Component } from "react";
+import Select from "material-ui/Select";
+import { MenuItem } from "material-ui/Menu";
+import Input, { InputLabel } from "material-ui/Input";
+import { FormControl, FormHelperText } from "material-ui/Form";
 
 class SelectControl extends Component {
   render() {
@@ -20,12 +19,14 @@ class SelectControl extends Component {
           <MenuItem value="">
             <em>None</em>
           </MenuItem>
-          {
-            field.options.map(option => <MenuItem key={option} value={option}>{option}</MenuItem>)
-          }
+          {field.options.map(option => (
+            <MenuItem key={option} value={option}>
+              {option}
+            </MenuItem>
+          ))}
         </Select>
       </FormControl>
-    )
+    );
   }
 }
 

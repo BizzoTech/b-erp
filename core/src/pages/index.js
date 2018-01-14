@@ -1,63 +1,60 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
-import Drawer from 'material-ui/Drawer';
-import Hidden from 'material-ui/Hidden';
+import React from "react";
+import PropTypes from "prop-types";
+import { withStyles } from "material-ui/styles";
+import Drawer from "material-ui/Drawer";
+import Hidden from "material-ui/Hidden";
 
-import withRoot from '../withRoot';
+import withRoot from "../withRoot";
 
+import Sidebar from "../components/Sidebar";
+import MainBar from "../components/MainBar";
+import Router from "../components/Router";
 
-
-import Sidebar from '../components/Sidebar';
-import MainBar from '../components/MainBar';
-import Router from '../components/Router';
-
-import {connect} from 'react-kunafa';
-
+import { connect } from "react-kunafa";
 
 const drawerWidth = 240;
 
 const styles = theme => ({
   root: {
-    width: '100%',
+    width: "100%",
     marginTop: theme.spacing.unit * 3,
     zIndex: 1,
-    overflow: 'hidden',
+    overflow: "hidden"
   },
   appFrame: {
-    position: 'relative',
-    display: 'flex',
-    width: '100%',
-    height: '100%',
+    position: "relative",
+    display: "flex",
+    width: "100%",
+    height: "100%"
   },
   drawerHeader: theme.mixins.toolbar,
   drawerPaper: {
     width: 250,
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up("md")]: {
       width: drawerWidth,
-      position: 'relative',
-      height: '100%',
-    },
+      position: "relative",
+      height: "100%"
+    }
   },
   content: {
     backgroundColor: theme.palette.background.default,
-    width: '100%',
+    width: "100%",
     padding: theme.spacing.unit,
-    height: 'calc(100% - 56px)',
+    height: "calc(100% - 56px)",
     marginTop: 56,
-    [theme.breakpoints.up('sm')]: {
-      height: 'calc(100% - 64px)',
-      marginTop: 64,
-    },
-  },
+    [theme.breakpoints.up("sm")]: {
+      height: "calc(100% - 64px)",
+      marginTop: 64
+    }
+  }
 });
 
 class Index extends React.Component {
   state = {
-    mobileOpen: false,
+    mobileOpen: false
   };
-  componentDidUpdate(prevProps){
-    if(this.props.route !== prevProps.route){
+  componentDidUpdate(prevProps) {
+    if (this.props.route !== prevProps.route) {
       this.setState({ mobileOpen: false });
     }
   }
@@ -77,14 +74,14 @@ class Index extends React.Component {
           <Hidden mdUp>
             <Drawer
               type="temporary"
-              anchor={theme.direction === 'rtl' ? 'right' : 'left'}
+              anchor={theme.direction === "rtl" ? "right" : "left"}
               open={this.state.mobileOpen}
               classes={{
-                paper: classes.drawerPaper,
+                paper: classes.drawerPaper
               }}
               onClose={this.handleDrawerToggle}
               ModalProps={{
-                keepMounted: true, // Better open performance on mobile.
+                keepMounted: true // Better open performance on mobile.
               }}
             >
               {drawer}
@@ -95,7 +92,7 @@ class Index extends React.Component {
               type="permanent"
               open
               classes={{
-                paper: classes.drawerPaper,
+                paper: classes.drawerPaper
               }}
             >
               {drawer}
@@ -112,11 +109,11 @@ class Index extends React.Component {
 
 Index.propTypes = {
   classes: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired,
+  theme: PropTypes.object.isRequired
 };
 
 export default connect(state => {
   return {
     route: state.history
-  }
+  };
 })(withRoot(withStyles(styles, { withTheme: true })(Index)));

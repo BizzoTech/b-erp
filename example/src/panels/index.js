@@ -6,14 +6,14 @@ export default {
         links: [
           {
             label: "Example 1",
-            path: ['list', "example"]
+            path: ["list", "example"]
           },
           {
             label: "Example 2",
-            path: ['form', "example2"]
+            path: ["form", "example2"]
           }
         ]
       }
     ]
   }
-}
+};

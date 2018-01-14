@@ -1,32 +1,29 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
-import AppBar from 'material-ui/AppBar';
-import Toolbar from 'material-ui/Toolbar';
-import Typography from 'material-ui/Typography';
-import IconButton from 'material-ui/IconButton';
-import MenuIcon from 'material-ui-icons/Menu';
-import withStyles from 'material-ui/styles/withStyles';
-
+import AppBar from "material-ui/AppBar";
+import Toolbar from "material-ui/Toolbar";
+import Typography from "material-ui/Typography";
+import IconButton from "material-ui/IconButton";
+import MenuIcon from "material-ui-icons/Menu";
+import withStyles from "material-ui/styles/withStyles";
 
 const drawerWidth = 240;
 
 const styles = theme => ({
   appBar: {
-    position: 'absolute',
+    position: "absolute",
     marginLeft: drawerWidth,
-    [theme.breakpoints.up('md')]: {
-      width: `calc(100% - ${drawerWidth}px)`,
-    },
+    [theme.breakpoints.up("md")]: {
+      width: `calc(100% - ${drawerWidth}px)`
+    }
   },
   navIconHide: {
-    [theme.breakpoints.up('md')]: {
-      display: 'none',
-    },
+    [theme.breakpoints.up("md")]: {
+      display: "none"
+    }
   }
 });
-
-
 
 class MainBar extends Component {
   render() {
@@ -47,12 +44,12 @@ class MainBar extends Component {
           </Typography>
         </Toolbar>
       </AppBar>
-    )
+    );
   }
 }
 
 MainBar.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(MainBar)
+export default withStyles(styles)(MainBar);

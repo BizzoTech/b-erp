@@ -6,10 +6,10 @@ export default {
         links: [
           {
             label: "Todo",
-            path: ['list', "todo"]
+            path: ["list", "todo"]
           }
         ]
       }
     ]
   }
-}
+};

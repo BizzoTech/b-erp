@@ -1,4 +1,3 @@
-
 window.app = window.app || {
   sidebarItems: {},
   panels: {},
@@ -6,7 +5,6 @@ window.app = window.app || {
   lists: {},
   docTypes: []
 };
-
 
 export const sidebarItems = window.app.sidebarItems;
 export const panels = window.app.panels;

@@ -1,39 +1,40 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
-import Divider from 'material-ui/Divider';
-import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
-import InboxIcon from 'material-ui-icons/MoveToInbox';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { withStyles } from "material-ui/styles";
+import Divider from "material-ui/Divider";
+import List, { ListItem, ListItemIcon, ListItemText } from "material-ui/List";
+import InboxIcon from "material-ui-icons/MoveToInbox";
 
-import { connect } from 'react-kunafa';
+import { connect } from "react-kunafa";
 
-import { sidebarItems } from '../../data';
-
-
+import { sidebarItems } from "../../data";
 
 const styles = theme => ({
   drawerHeader: theme.mixins.toolbar
 });
 
-
 class Sidebar extends Component {
   onItemClick = itemKey => {
-    this.props.navigateTo(["panel", itemKey])
-  }
+    this.props.navigateTo(["panel", itemKey]);
+  };
   renderItems = () => {
     return Object.keys(sidebarItems).map(itemKey => {
       const item = sidebarItems[itemKey];
-      const label = (typeof item) === "string" ? item : item.label;
+      const label = typeof item === "string" ? item : item.label;
       return (
-        <ListItem button key={itemKey} onClick={() => this.onItemClick(itemKey)}>
+        <ListItem
+          button
+          key={itemKey}
+          onClick={() => this.onItemClick(itemKey)}
+        >
           <ListItemIcon>
             <InboxIcon />
           </ListItemIcon>
           <ListItemText primary={label} />
         </ListItem>
-      )
-    })
-  }
+      );
+    });
+  };
   render() {
     const { classes } = this.props;
     return (
@@ -71,7 +72,7 @@ class Sidebar extends Component {
           </ListItem>
         </List>
       </div>
-    )
+    );
   }
 }
 

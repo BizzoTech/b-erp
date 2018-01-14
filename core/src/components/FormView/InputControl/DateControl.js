@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import { DatePicker } from 'material-ui-pickers';
-import KeyboardArrowLeft from 'material-ui-icons/KeyboardArrowLeft';
-import KeyboardArrowRight from 'material-ui-icons/KeyboardArrowRight';
+import { DatePicker } from "material-ui-pickers";
+import KeyboardArrowLeft from "material-ui-icons/KeyboardArrowLeft";
+import KeyboardArrowRight from "material-ui-icons/KeyboardArrowRight";
 
 const datePickerIcons = {
   leftArrowIcon: <KeyboardArrowLeft />,
   rightArrowIcon: <KeyboardArrowRight />
-}
+};
 
 class DateControl extends Component {
   render() {
@@ -15,11 +15,17 @@ class DateControl extends Component {
     const { label, name, type } = field;
     const fieldProps = { label, name, disabled: field.readOnly };
     return (
-      <DatePicker {...datePickerIcons} {...fieldProps} type={undefined} value={value} fullWidth onChange={date => {
-        onChange(date.valueOf())
-      }
-      } />
-    )
+      <DatePicker
+        {...datePickerIcons}
+        {...fieldProps}
+        type={undefined}
+        value={value}
+        fullWidth
+        onChange={date => {
+          onChange(date.valueOf());
+        }}
+      />
+    );
   }
 }
 

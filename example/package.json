@@ -8,7 +8,8 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "analyze": "webpack --json | webpack-bundle-size-analyzer"
+    "analyze": "webpack --json | webpack-bundle-size-analyzer",
+    "prettier": "prettier --write \"src/**/*.js\""
   },
   "dependencies": {
     "b-erp-core": "0.0.1"
@@ -25,6 +26,7 @@
     "babel-preset-react": "^6.24.1",
     "coveralls": "^2.13.1",
     "jest": "^21.0.1",
+    "prettier": "1.9.2",
     "redux-devtools-extension": "^2.13.2",
     "redux-testkit": "^1.0.6",
     "regenerator-runtime": "^0.11.0",

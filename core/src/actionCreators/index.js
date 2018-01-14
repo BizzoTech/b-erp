@@ -1,5 +1,5 @@
-import * as docsActions from './docs';
+import * as docsActions from "./docs";
 
 export default {
   ...docsActions
-}
+};
