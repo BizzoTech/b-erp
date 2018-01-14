@@ -1,0 +1,20 @@
+{
+  "name": "b-erp",
+  "private": true,
+  "scripts":{
+    "start": "node node_modules/kunafa/run.js",
+    "prettier": "prettier \"**/*.js\""
+  },
+  "workspaces": [
+    "web",
+    "core",
+    "example",
+    "tools"
+  ],
+  "dependencies": {
+    "kunafa": "git+https://github.com/BizzoTech/kunafa#5940292f01e75417b493a8354d00ef36bfcc12a2"
+  },
+  "devDependencies": {
+    "prettier": "1.9.2"
+  }
+}

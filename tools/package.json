@@ -1,0 +1,30 @@
+{
+  "name": "b-erp-tools",
+  "version": "0.0.1",
+  "main": "dist/js/tools.bundle.js",
+  "scripts": {
+    "build": "webpack",
+    "build:production": "NODE_ENV=production webpack",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "analyze": "webpack --json | webpack-bundle-size-analyzer"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-jest": "^21.0.0",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "coveralls": "^2.13.1",
+    "jest": "^21.0.1",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-testkit": "^1.0.6",
+    "regenerator-runtime": "^0.11.0",
+    "webpack": "^3.6.0"
+  }
+}

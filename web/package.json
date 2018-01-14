@@ -1,0 +1,16 @@
+{
+  "name": "b-erp-web",
+  "version": "0.0.1",
+  "dependencies": {
+    "b-erp-core": "0.0.1",
+    "b-erp-example": "0.0.1",
+    "b-erp-tools": "0.0.1",
+    "react-scripts": "latest"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
