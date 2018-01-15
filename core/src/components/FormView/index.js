@@ -55,7 +55,7 @@ class FormView extends Component {
     const updatedDoc = docChanges ? { ...doc, ...docChanges } : doc;
     if (!updatedDoc._id) {
       this.props.addDoc({ type: docType, ...updatedDoc });
-      this.props.navigateTo(["list", docType]);
+      this.props.webNavigateTo(["list", docType]);
     } else {
       this.props.updateDoc({
         _id: doc._id,

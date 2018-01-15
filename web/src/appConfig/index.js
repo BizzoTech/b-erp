@@ -1,5 +1,5 @@
 export default {
-  HOST: "localhost:9090",
+  HOST: "localhost:5050",
   useReduxDevTools: process.env.NODE_ENV !== "production",
   localOnlyActions: [
     "START_PROCESSING_LOCAL",

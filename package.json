@@ -1,11 +1,14 @@
 {
   "name": "b-erp",
   "private": true,
-  "scripts":{
-    "start": "node node_modules/kunafa/run.js",
-    "prettier": "prettier \"**/*.js\""
+  "scripts": {
+    "start": "concurrently \"yarn start:web\" \"yarn start:proxy\"",
+    "start:proxy": "cd proxy && yarn start",
+    "start:web": "cd web && yarn start",
+    "start:kunafa": "node node_modules/kunafa/run.js"
   },
   "workspaces": [
+    "proxy",
     "web",
     "core",
     "example",
@@ -15,6 +18,6 @@
     "kunafa": "git+https://github.com/BizzoTech/kunafa#5940292f01e75417b493a8354d00ef36bfcc12a2"
   },
   "devDependencies": {
-    "prettier": "1.9.2"
+    "concurrently": "^3.5.1"
   }
 }

@@ -32,7 +32,7 @@ class PanelView extends Component {
     return group.links.map((link, i) => {
       return (
         <Grid key={i} item xs={12} sm={6} style={{ textAlign: "center" }}>
-          <Button onClick={() => this.props.navigateTo(link.path)}>
+          <Button onClick={() => this.props.webNavigateTo(link.path)}>
             {" "}
             {link.label}{" "}
           </Button>

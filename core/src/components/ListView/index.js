@@ -82,7 +82,7 @@ class ListView extends Component {
   };
   addNewItem = () => {
     const { docType } = this.props;
-    this.props.navigateTo(["form", docType, "new"]);
+    this.props.webNavigateTo(["form", docType, "new"]);
   };
   removeSelected = () => {
     const { selected } = this.state;
@@ -102,7 +102,7 @@ class ListView extends Component {
           hover
           onClick={e => {
             if (e.target.type !== "checkbox") {
-              this.props.navigateTo(["form", docType, row._id]);
+              this.props.webNavigateTo(["form", docType, row._id]);
             }
           }}
         >

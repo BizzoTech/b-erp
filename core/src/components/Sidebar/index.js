@@ -15,7 +15,7 @@ const styles = theme => ({
 
 class Sidebar extends Component {
   onItemClick = itemKey => {
-    this.props.navigateTo(["panel", itemKey]);
+    this.props.webNavigateTo(["panel", itemKey]);
   };
   renderItems = () => {
     return Object.keys(sidebarItems).map(itemKey => {

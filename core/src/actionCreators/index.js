@@ -1,5 +1,8 @@
 import * as docsActions from "./docs";
 
 export default {
-  ...docsActions
+  ...docsActions,
+  webNavigateTo: (path, config) => {
+    return config.actionCreators.navigateTo(["web", ...path]);
+  }
 };
