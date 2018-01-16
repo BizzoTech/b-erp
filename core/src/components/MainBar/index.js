@@ -4,9 +4,12 @@ import PropTypes from "prop-types";
 import AppBar from "material-ui/AppBar";
 import Toolbar from "material-ui/Toolbar";
 import Typography from "material-ui/Typography";
+import Button from 'material-ui/Button';
 import IconButton from "material-ui/IconButton";
 import MenuIcon from "material-ui-icons/Menu";
 import withStyles from "material-ui/styles/withStyles";
+
+import { connect } from "react-kunafa";
 
 const drawerWidth = 240;
 
@@ -22,6 +25,11 @@ const styles = theme => ({
     [theme.breakpoints.up("md")]: {
       display: "none"
     }
+  },
+  logout: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    width: `calc(100% - 120px)`
   }
 });
 
@@ -42,6 +50,9 @@ class MainBar extends Component {
           <Typography type="title" color="inherit" noWrap>
             B-ERP
           </Typography>
+          <div className={classes.logout}>
+            <Button color="contrast" onClick={this.props.userLogout}>Logout</Button>
+          </div>
         </Toolbar>
       </AppBar>
     );
@@ -52,4 +63,4 @@ MainBar.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(MainBar);
+export default connect()(withStyles(styles)(MainBar));

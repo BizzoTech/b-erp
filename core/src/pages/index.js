@@ -12,6 +12,8 @@ import Router from "../components/Router";
 
 import { connect } from "react-kunafa";
 
+import Auth from './Auth';
+
 const drawerWidth = 240;
 
 const styles = theme => ({
@@ -63,7 +65,11 @@ class Index extends React.Component {
   };
 
   render() {
-    const { classes, theme } = this.props;
+    const { classes, theme, loggedIn } = this.props;
+
+    if(!loggedIn){
+      return <Auth />;
+    }
 
     const drawer = <Sidebar />;
 
@@ -112,8 +118,9 @@ Index.propTypes = {
   theme: PropTypes.object.isRequired
 };
 
-export default connect(state => {
+export default connect((state, {selectors}) => {
   return {
-    route: state.history
+    route: state.history,
+    loggedIn: state.currentProfile._id !== undefined
   };
 })(withRoot(withStyles(styles, { withTheme: true })(Index)));
