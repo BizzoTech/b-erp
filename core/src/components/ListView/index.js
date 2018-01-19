@@ -51,6 +51,10 @@ class ListView extends Component {
   state = {
     selected: []
   };
+  componentDidMount() {
+    const { docType, loadNewDocs } = this.props;
+    loadNewDocs(docType);
+  }
   componentWillReceiveProps = nextProps => {
     if (this.props.rows !== nextProps.rows) {
       const selected = this.state.selected.filter(rowId => {

@@ -2,7 +2,7 @@
   "name": "b-erp-proxy",
   "version": "0.0.1",
   "scripts": {
-    "start": "node src/server.js",
+    "start": "nodemon src/server.js",
     "build": "webpack",
     "build:production": "NODE_ENV=production webpack",
     "test": "jest",
@@ -23,8 +23,10 @@
     "babel-preset-react": "^6.24.1",
     "coveralls": "^2.13.1",
     "jest": "^21.0.1",
+    "nodemon": "^1.14.11",
     "prettier": "1.9.2",
     "regenerator-runtime": "^0.11.0",
     "webpack": "^3.6.0"
-  }
+  },
+  "dependencies": {}
 }

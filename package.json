@@ -15,10 +15,15 @@
     "tools"
   ],
   "dependencies": {
+    "fs-extra": "^5.0.0",
     "kunafa": "git+https://github.com/BizzoTech/kunafa#5940292f01e75417b493a8354d00ef36bfcc12a2",
     "kunafa-plugin-custom-auth": "git+https://github.com/BizzoTech/kunafa-plugin-custom-auth#5efe9f92c6e4bda1b3128246948ee3b38a2dc874"
   },
   "devDependencies": {
     "concurrently": "^3.5.1"
-  }
+  },
+  "b-erp-modules": [
+    "b-erp-tools",
+    "b-erp-example"
+  ]
 }

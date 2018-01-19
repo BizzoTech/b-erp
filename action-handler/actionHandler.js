@@ -1,8 +1,10 @@
-import { docTypes } from "../data";
+const {createActionHandler} = require('experimental-server');
 
-const R = require("ramda");
+const tools = require('../tools').default;
 
-export default () => {
+const R = require('ramda');
+
+const createActionHandlers = docTypes => {
   const actionHandlers = {};
 
   docTypes.forEach(docType => {
@@ -24,3 +26,11 @@ export default () => {
 
   return actionHandlers;
 };
+
+
+
+
+const actionHandlers = createActionHandlers(tools.docTypes);
+
+const startActionHandler = createActionHandler(actionHandlers, 'http://localhost:9090/events', 'http://localhost:9090/public');
+startActionHandler();

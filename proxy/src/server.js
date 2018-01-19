@@ -14,16 +14,20 @@ const server = http.createServer(function(req, res) {
 
   try {
 
-    if(req.url === "/"){
-      res.writeHead(302, {'Location': 'http://localhost:5050/web'});
-      res.end();
-      return;
-    }
+    // if(req.url === "/"){
+    //   res.writeHead(302, {'Location': 'http://localhost:5050/web'});
+    //   res.end();
+    //   return;
+    // }
+  
 
     if (
+      req.url === "/" ||
       req.url.startsWith("/web") ||
+      req.url.startsWith("/manifest") ||
       req.url.startsWith("/static") ||
       req.url.startsWith("/favicon") ||
+      req.url.startsWith("/icon") ||
       req.url.startsWith("/sockjs")
     ) {
       return proxy.web(req, res, {

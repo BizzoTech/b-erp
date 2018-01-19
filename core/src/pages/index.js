@@ -12,7 +12,7 @@ import Router from "../components/Router";
 
 import { connect } from "react-kunafa";
 
-import Auth from './Auth';
+import Auth from "./Auth";
 
 const drawerWidth = 240;
 
@@ -67,7 +67,7 @@ class Index extends React.Component {
   render() {
     const { classes, theme, loggedIn } = this.props;
 
-    if(!loggedIn){
+    if (!loggedIn) {
       return <Auth />;
     }
 
@@ -118,7 +118,7 @@ Index.propTypes = {
   theme: PropTypes.object.isRequired
 };
 
-export default connect((state, {selectors}) => {
+export default connect((state, { selectors }) => {
   return {
     route: state.history,
     loggedIn: state.currentProfile._id !== undefined

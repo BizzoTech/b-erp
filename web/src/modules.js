@@ -1,6 +1,6 @@
 import { registerModule } from "b-erp-core/dist/registerModule";
-import toolsModule from "b-erp-tools";
-import exampleModule from "b-erp-example";
+import module0 from "b-erp-tools";
+import module1 from "b-erp-example";
 
-registerModule(toolsModule);
-registerModule(exampleModule);
+registerModule(module0);
+registerModule(module1);  
